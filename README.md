@@ -2,7 +2,7 @@
 
 This repository contains a [slack](https://slack.com) clone made with [PostgreSQL](https://www.postgresql.org/), [Go](https://golang.org/), and [Docker Compose](https://docs.docker.com/compose/install/)
 
-This demo is visible at slonk.layerci.com
+This demo is visible at [slonk.cidemo.co](https://slonk.cidemo.co)
 
 To deploy:
 ```
