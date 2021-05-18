@@ -1,0 +1,7 @@
+FROM /Layerfile
+
+WAIT /services/web /services/cypress
+
+BUTTON Deploy?
+
+RUN echo deployed
