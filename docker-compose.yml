@@ -33,6 +33,7 @@ services:
       - "traefik.http.services.web.loadbalancer.server.port=80"
       - "traefik.http.routers.web.rule=PathPrefix(`/`)"
       - "traefik.http.routers.web.entrypoints=web"
+      - "traefik.http.routers.web.tls=true"
     expose:
       - 80
     restart: on-failure
@@ -46,6 +47,7 @@ services:
       - "traefik.http.services.api.loadbalancer.server.port=80"
       - "traefik.http.routers.api.rule=PathPrefix(`/api/`)"
       - "traefik.http.routers.api.entrypoints=web"
+      - "traefik.http.routers.api.tls=true"
     expose:
       - 80
     restart: on-failure
@@ -59,9 +61,9 @@ services:
       - "--accesslog"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.address=:443"
     ports:
-      - "8000:80"
+      - "443:443"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 
