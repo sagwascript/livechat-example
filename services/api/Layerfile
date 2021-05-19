@@ -1,6 +1,6 @@
 FROM /Layerfile
 
-SKIP REMAINING IF $LAYERCI_BRANCH!=main
+SKIP REMAINING IF LAYERCI_BRANCH!=main
 
 SECRET ENV ssh_key
 RUN echo "$ssh_key" | base64 -d > slonk_machine_key
