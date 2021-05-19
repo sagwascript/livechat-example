@@ -9,7 +9,7 @@ it('sets auth cookie when logging in via form submission', function () {
     // {enter} causes the form to submit
     cy.get('input[name=password]').type(`${password}{enter}`)
 
-    cy.url().should('eq', 'http://traefik/')
+    cy.url().should('eq', 'https://traefik/')
 
     // our auth cookie should be present
     cy.getCookie('default').should('exist')
