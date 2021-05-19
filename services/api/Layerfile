@@ -3,6 +3,6 @@ FROM /Layerfile
 SKIP REMAINING IF LAYERCI_BRANCH!=main
 
 SECRET ENV slonk_ssh_key
-RUN echo "$slonk_ssh_key" | base64 -d > ~/myfile && chmod 600 slonk_ssh_key
+RUN echo "$slonk_ssh_key" | base64 -d > ~/myfile && chmod 600 slonk_machine_key
 
 RUN ssh -i slonk_machine_key -o StrictHostKeyChecking=no root@51.222.87.188 "rm -rf /tmp/build 2>/dev/null; git clone https://github.com/layerdevopsdemo/livechat-example.git /tmp/build && cd /tmp/build && docker-compose build --parallel && docker-compose up -d --force-recreate --remove-orphans"
